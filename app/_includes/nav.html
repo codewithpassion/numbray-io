@@ -1,0 +1,32 @@
+<nav 
+    class="navbar navbar-toggleable-md fixed-top navbar-light"
+    role="navigation"
+>
+    
+    <button
+        class="navbar-toggler navbar-toggler-right"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarCollapse"
+        aria-controls="navbarCollapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="container navbar-container">            
+        <a class="navbar-brand" href="/">
+            <!--<img src="{{ site.base }}/images/numbray.png" width="230" height="29" class="d-inline-block align-top" alt="Numbray">    -->
+            <h1>NumbRay</h1>
+        </a>
+        
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link {% if page.slug == 'products' %}active{% endif %}" href="{{ site.base }}/about">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

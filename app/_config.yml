@@ -1,0 +1,43 @@
+gems:
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+
+array: []
+
+# for SEO
+#webmaster_verifications:
+#  google: 
+
+title: Numbray - Remote Brain Stimulation
+description: New ways for TDCS
+url: 'http://www.numbray.io'
+
+# defaults:
+#   - scope:
+#       path: ""
+#     values:
+#       image: /images/numbray.jpg
+#       height: 1200
+#       width: 1200
+
+author:
+  name: NumbRay
+  email: info@numbray.io
+  twitter: numbray
+  #facebook: 
+  #instagram: 
+
+twitter:
+  username: numbray
+
+social:
+  name: Numbray
+  links:
+    - https://twitter.com/numbray
+    - https://www.facebook.com/NumbrayHQ
+
+logo: /images/numbray.png
+

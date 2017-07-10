@@ -1,0 +1,211 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+
+    <script>
+      dataLayer = [{ }];
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M5WW27');</script>
+    <!-- End Google Tag Manager -->  
+    
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>{{page.title}}{% if page.title %} | {% endif %}{{site.title}}</title>
+    {% seo title=false %}
+    
+    {% if page.video %}
+    <meta property="og:video" content="{{page.video}}" />
+    {% endif %}
+
+    <link rel="icon" href="{{ site.base }}/images/favicon/favicon.png" />
+    <link rel="shortcut icon" href="{{ site.base }}/images/favicon/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="{{ site.base }}/images/favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ site.base }}/images/favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ site.base }}/images/favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ site.base }}/images/favicon/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ site.base }}/images/favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ site.base }}/images/favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ site.base }}/images/favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ site.base }}/images/favicon/apple-touch-icon-152x152.png" />
+
+    <!-- build:css /styles/main.css -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <!-- endbuild -->
+    
+    <!-- additional site verification -->
+    <meta name="google-site-verification" content="GCpgwdnU5lk4pS4YrIH1SFSYFyPy6I025COL2McYRcI" />
+
+    {% if page.page_css %}
+        <!-- build:css /styles/{{page.slug}}.css -->
+        {% for css in page.page_css %}
+            {% assign cssPath = css %}
+            {% if css contains '//' %} {% assign cssPath = css %} {% endif %} 
+    <link rel="stylesheet" href="{{ cssPath }}" media="screen">
+        {% endfor %}
+        <!-- endbuild -->
+    {% endif %}
+
+    <!-- prleloading and caching-->
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//connect.facebook.net">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s3.amazonaws.com">
+    
+    <link rel="prefetch" href="/styles/main.css">
+    <link rel="prefetch" href="/styles/vendor.css">
+    <link rel="prefetch" href="/scripts/vendor.js">
+
+    {% if  page.breadcrumbs %}
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "{{site.url}}",
+            "name": "OpenROV"
+          }
+        }
+        {% assign path = "" %}
+        {% for item in page.breadcrumbs %}
+        {% assign indexFoo = forloop.index %}
+        {% capture path %}{{path}}/{{item.id}}{% endcapture %}
+        ,{
+          "@type": "ListItem",
+          "position": {{ indexFoo | plus: 1 }},
+          "item": {
+            "@id": "{{site.url}}{{path}}",
+            "name": "{{item.name}}"
+          }
+        }
+        {% endfor %}
+        ]
+      }
+    </script>
+    {% endif %}
+
+    {% if page.include_page_css %}
+      <style>
+      {% include styles/{{page.include_page_css}}.css %}
+      </style> 
+    {% endif %}
+
+  </head>
+  <body>
+    <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+      <!-- Google Tag Manager (noscript) -->
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5WW27" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      </noscript>
+      <!-- End Google Tag Manager (noscript) -->
+
+    <div class="container-fluid">
+      {% include nav.html %}
+
+      {{ content }}
+
+      {% include footer.html %}
+
+    </div>
+        
+
+    <!-- build:js /scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/tether/dist/js/tether.js"></script>
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/slick-carousel/slick/slick.js"></script>
+    <script src="/bower_components/babel-polyfill/browser-polyfill.js"></script>
+    <script src="/bower_components/lazysizes/lazysizes.js"></script>
+    <script src="/bower_components/magnific-popup/dist/jquery.magnific-popup.js"></script>
+    <script src="/bower_components/waypoints/lib/noframework.waypoints.js"></script>
+    <script src="/bower_components/Fullscreen-API-Polyfill/fullscreen-api-polyfill.min.js"></script>
+    <!-- endbower -->
+    <script src="/bower_components/bootstrap-validator/dist/validator.js"></script>
+
+
+    <script src="/bower_components/bootstrap/js/dist/util.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/alert.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/button.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/carousel.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/collapse.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/dropdown.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/modal.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/tab.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/tooltip.js"></script>
+    <script src="/bower_components/bootstrap/js/dist/popover.js"></script>
+
+    <!-- endbuild -->
+    
+    <!-- build:js /scripts/main.js -->
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/_jquery.bcSwipe.js"></script>
+    <script src="/scripts/_selectHierarchy.js"></script>
+    <script src="/scripts/_support.js"></script>
+    <script src="/scripts/_newsletter.js"></script>
+    <script src="/scripts/_video.js"></script>
+    <!-- endbuild -->
+
+    {% if page.page_script %}
+    <!-- build:js /scripts/{{page.slug}}.js -->
+        {% for script in page.page_script %}
+            {% assign scriptPath = script %}
+            {% unless script contains '//' %} 
+    <script src="{{ scriptPath }}"></script>
+            {% endunless %} 
+        {% endfor %}
+    <!-- endbuild -->
+        {% for script in page.page_script %}
+            {% assign scriptPath = script %}
+            {% if script contains '//' %} 
+    <script src="{{ scriptPath }}"></script>
+            {% endif %} 
+        {% endfor %}
+
+    {% endif %}
+
+    <noscript id="deferred-styles">
+      <link href='https://fonts.googleapis.com/css?family=Lato:300,400,600'
+        rel='stylesheet' type='text/css'>
+
+      <!-- build:css /styles/vendor.css -->
+      <!-- bower:css -->
+      <link rel='stylesheet' href='/bower_components/magnific-popup/dist/magnific-popup.css' />
+      <!-- endbower -->
+      <!-- endbuild -->
+        
+    </noscript>
+
+    <script>
+      var loadDeferredStyles = function () {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = '{{site.baseUrl}}' + addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+        webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function () { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
+
+    <!-- build:js /scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js" async></script>
+    <!-- endbuild -->
+  </body>
+</html>
