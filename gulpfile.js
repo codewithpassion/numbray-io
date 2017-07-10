@@ -315,18 +315,18 @@ gulp.task('deploy:prod', () => {
   })
 });
 
-gulp.task('exec-deploy', () => {
+gulp.task('exec-deploy-prod', () => {
   return gulp.src('dist/**/*')
     .pipe($.ghPages({
       branch: 'gh-pages',
       remoteUrl: 'git@github.com:codewithpassion/numbray-io.git',
-      push: false
+      push: true
     }));
 
 })
 
 gulp.task('prep-deploy-prod', () => {
-  return $.file('CNAME', 'www.numbray.io', { src: true })
+  return $.file('CNAME', 'numbray.io', { src: true })
     .pipe(gulp.dest('dist/'));
 })
 
